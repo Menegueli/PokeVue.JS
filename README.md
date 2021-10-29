@@ -1,4 +1,11 @@
-# pokemon-vue
+# PokeVue.JS
+
+## Stack do Projeto
+- Vue.JS
+- Nuxt.JS
+- TailwindCSS
+- Axios
+
 
 ## Build Setup
 
