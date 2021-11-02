@@ -1,14 +1,42 @@
 <template>
   <div class="container">
+       <table>
 
-      <p>{{pokemons.name}}</p>
-      
+        <thead>
+
+          <tr>
+            <th>NOME</th>
+            <th>QTD</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+           <tr v-for="(pokemon, index) in pokemons" :key="index" class="pokemon">
+
+
+
+            <div class="pokemon-picture">
+              <img :src="pokemons[index].sprites.front_default" :alt="pokemons[index].name">
+            </div>
+            <td>{{ pokemons[index].name }}</td>
+            <td>{{ pokemons[index].weight }}</td>
+
+
+
+          </tr>
+
+        </tbody>
+
+      </table>
 
   </div>
 </template>
 
 <script>
 const axios = require('axios');
+let offset =  1, limit = 14;
 
 export default {
 
@@ -24,9 +52,16 @@ export default {
 
     methods: {
         async getPokemons(){
-            const response = await axios.get('https://pokeapi.co/api/v2/pokemon/pikachu');
-            this.pokemons = response.data;
+          for(let index = 0; index <= limit; index++) {
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${index + offset}`);
+            this.pokemons.push(response.data);
+
+
+
+
+
        }
     }
+  }
 }
 </script>
