@@ -37,7 +37,7 @@
 
 <script>
 const axios = require('axios');
-let offset =  1, limit = 14;
+let offset =  1, limit = 1119;
 
 export default {
 
