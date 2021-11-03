@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for pokemons..">
        <table>
 
         <thead>
@@ -13,7 +14,7 @@
 
         <tbody>
 
-           <tr v-for="(pokemon, index) in pokemons" :key="index" class="pokemon">
+           <tr id="myUL" v-for="(pokemon, index) in pokemons" :key="index" class="pokemon">
 
 
 
@@ -63,5 +64,11 @@ export default {
        }
     }
   }
+
+
+
+
+
 }
+
 </script>
